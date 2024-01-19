@@ -7,6 +7,34 @@ body {
   background-color: #ecf0f3;
   width: 100%;
 
+  &.dark {
+    background-color: colors(dark_main);
+    color: colors(dark_text);
+
+    a {
+      color: colors(dark_text);
+    }
+
+    .search-container {
+      background-color: colors(dark_sec);
+      box-shadow:
+        10px 10px 10px #171717,
+        -10px -10px 10px #000000;
+
+      input {
+        background-color: #121212;
+      }
+    }
+
+    .section-faq .collapsible {
+      background-color: #121212;
+    }
+
+    footer {
+      background-color: #000;
+    }
+  }
+
   .content-container {
     width: 100%;
     margin: 0 auto;

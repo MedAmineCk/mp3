@@ -190,6 +190,26 @@ body {
   background-color: #ecf0f3;
   width: 100%;
 }
+body.dark {
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+}
+body.dark a {
+  color: #f1f1f1;
+}
+body.dark .search-container {
+  background-color: #272727;
+  box-shadow: 10px 10px 10px #171717, -10px -10px 10px #000000;
+}
+body.dark .search-container input {
+  background-color: #121212;
+}
+body.dark .section-faq .collapsible {
+  background-color: #121212;
+}
+body.dark footer {
+  background-color: #000;
+}
 body .content-container {
   width: 100%;
   margin: 0 auto;
