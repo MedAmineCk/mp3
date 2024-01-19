@@ -50,7 +50,7 @@
   <header>
     <div class="content-container flex-between flex-align">
       <div class="logo flex-center">
-        <img src="./img/ytmp3juice-logo.svg" alt="ytmp3juice logo img">
+        <img id="logo" src="./img/ytmp3juice-logo.svg" alt="ytmp3juice logo img">
       </div>
       <nav>
         <ul class="flex">
@@ -60,7 +60,7 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <div class="mode toggle flex" onclick="this.classList.toggle('dark')">
+      <div id="toggleModButton" class="mode toggle flex" onclick="toggleDarkMode(this)">
         <input type="checkbox" name="dark-mode" id="dark-mode">
         <div class="light flex-align">
           <div class="icon flex-center">
@@ -97,12 +97,14 @@
       <p class="sub-title">Convert and <b>download Youtube videos</b> in MP3, MP4, 3GP <b>for free</b></p>
 
       <div class="search-container">
-        <form class="flex">
-          <input type="text" placeholder="Past Youtube URL Here.." required>
+        <form class="flex" onsubmit="generateIframe(event)">
+          <input id="youtubeUrlInput" type="text" placeholder="Past Youtube URL Here.." required>
           <button class="bubbly-button" type="submit">Download</button>
         </form>
         <p>By pressing "Search" you confirm your consent to our <a href="#">Terms of Use</a>.</p>
       </div>
+
+      <div id="iframeContainer"></div>
 
       <br>
       <hr>
@@ -272,6 +274,29 @@
   </footer>
 
 
+  <script>
+    // Function to check if dark mode is supported
+    function isDarkModeSupported() {
+      // Use the matchMedia method to check if dark mode is supported
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    // Function to initialize local storage based on user system
+    function initializeLocalStorage() {
+
+      // Check if dark mode is supported and not set in local storage
+      if (isDarkModeSupported() && localStorage.getItem('isDark') === null) {
+        // Set the initial value in local storage
+        localStorage.setItem('isDark', true);
+
+        // Optionally, you can also add the "dark" class to the body for immediate styling
+        document.body.classList.add('dark');
+      }
+    }
+
+    // Call the initialization function
+    initializeLocalStorage();
+  </script>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>

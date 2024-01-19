@@ -15,19 +15,53 @@ document.querySelectorAll(".faq").forEach(function (faq) {
   });
 });
 
-var animateButton = function (e) {
-  e.preventDefault;
-  //reset animation
-  e.target.classList.remove("animate");
+function generateIframe(event) {
+  event.preventDefault();
+  // Get the YouTube URL from the input
+  var youtubeUrl = document.getElementById("youtubeUrlInput").value;
 
-  e.target.classList.add("animate");
-  setTimeout(function () {
-    e.target.classList.remove("animate");
-  }, 700);
-};
+  // Create an iframe element
+  var iframe = document.createElement("iframe");
+  iframe.id = "hphp";
+  iframe.style.border = "none";
+  iframe.width = "100%";
+  iframe.height = "750";
 
-var bubblyButtons = document.getElementsByClassName("bubbly-button");
+  // Construct the URL for the iframe
+  var apiUrl =
+    "https://apiyoutube.cc/?url=" +
+    encodeURIComponent(youtubeUrl) +
+    "&color=e91e63";
+  iframe.src = apiUrl;
 
-for (var i = 0; i < bubblyButtons.length; i++) {
-  bubblyButtons[i].addEventListener("click", animateButton, false);
+  // Clear previous iframe content
+  document.getElementById("iframeContainer").innerHTML = "";
+
+  // Append the iframe to the container
+  document.getElementById("iframeContainer").appendChild(iframe);
+}
+
+const logo = document.getElementById("logo");
+const toggleModButton = document.getElementById("toggleModButton");
+function toggleDarkMode(_this) {
+  // Toggle the "dark" class on the body element
+  document.body.classList.toggle("dark");
+
+  // Toggle the "dark" class on the clicked button
+  _this.classList.toggle("dark");
+
+  // Toggle the logo source between light and dark modes
+  const isDarkMode = document.body.classList.contains("dark");
+  logo.src = isDarkMode
+    ? "./img/ytmp3juice-logo-dark.svg"
+    : "./img/ytmp3juice-logo.svg";
+
+  localStorage.setItem("isDark", isDarkMode);
+}
+
+let isDarkMode = localStorage.getItem("isDark");
+if (isDarkMode) {
+  document.body.classList.add("dark");
+  toggleModButton.classList.add("dark");
+  logo.src = "./img/ytmp3juice-logo-dark.svg";
 }
