@@ -43,6 +43,7 @@ function generateIframe(event) {
 
 const logo = document.getElementById("logo");
 const toggleModButton = document.getElementById("toggleModButton");
+
 function toggleDarkMode(_this) {
   // Toggle the "dark" class on the body element
   document.body.classList.toggle("dark");
@@ -56,11 +57,11 @@ function toggleDarkMode(_this) {
     ? "./img/ytmp3juice-logo-dark.svg"
     : "./img/ytmp3juice-logo.svg";
 
-  localStorage.setItem("isDark", isDarkMode);
+  localStorage.setItem("isDark", isDarkMode ? "enabled" : "");
 }
 
 let isDarkMode = localStorage.getItem("isDark");
-if (isDarkMode) {
+if (isDarkMode === "enabled") {
   document.body.classList.add("dark");
   toggleModButton.classList.add("dark");
   logo.src = "./img/ytmp3juice-logo-dark.svg";

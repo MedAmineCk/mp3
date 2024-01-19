@@ -287,10 +287,7 @@
       // Check if dark mode is supported and not set in local storage
       if (isDarkModeSupported() && localStorage.getItem('isDark') === null) {
         // Set the initial value in local storage
-        localStorage.setItem('isDark', true);
-
-        // Optionally, you can also add the "dark" class to the body for immediate styling
-        document.body.classList.add('dark');
+        localStorage.setItem('isDark', 'enabled');
       }
     }
 
