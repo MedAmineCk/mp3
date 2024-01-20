@@ -1,61 +1,40 @@
-@import "./variables";
-@import "./default";
-@import "./faqs";
-@import "./button-animation";
-
 body {
-  width: 100%;
   background-color: #ecf0f3;
-
-  &.dark {
-    background-color: colors(dark_main);
-    color: colors(dark_text);
-
-    a {
-      color: colors(dark_text);
-    }
-
-    .search-container {
-      background-color: colors(dark_sec);
-      box-shadow:
-        10px 10px 10px #171717,
-        -10px -10px 10px #000000;
-
-      input {
-        background-color: #121212;
-      }
-    }
-
-    .section-faq .collapsible {
-      background-color: #121212;
-    }
-
-    footer {
-      background-color: #000;
-    }
-  }
+  width: 100%;
 
   .content-container {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   header {
-    height: 60px;
+    margin-bottom: 140px;
+    width: 100%;
+    .content-container {
+      height: 60px;
+    }
 
     .logo {
-      max-width: 100px;
+      max-width: 140px;
       img {
         max-width: 100%;
         max-height: 100%;
       }
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     nav {
+      width: 100%;
+      margin-right: 20px;
       ul {
-        gap: 40px;
+        width: 100%;
+        gap: 20px;
         list-style: none;
+        justify-content: space-between;
         a {
           &.active,
           &:hover {
@@ -74,18 +53,23 @@ body {
     }
 
     .mode {
-      width: 100px;
       $size: 34px;
+      width: $size;
+      min-width: $size;
       height: $size;
       background: #fff;
       justify-content: space-between;
-      border-radius: 34px;
+      border-radius: $size;
       border: 2px solid #000;
       box-sizing: content-box;
       position: relative;
       overflow: hidden;
       cursor: pointer;
       user-select: none;
+
+      .label {
+        display: none;
+      }
 
       input {
         visibility: hidden;
@@ -103,17 +87,17 @@ body {
         border-radius: $size;
         position: absolute;
 
+        .icon {
+          width: $size;
+          height: $size;
+          border-radius: $size;
+        }
+
         &.dark {
           background: #000;
           color: #fff;
           right: -(100px - $size);
           transition: right 0.2s ease;
-
-          .icon {
-            width: $size;
-            height: $size;
-            border-radius: $size;
-          }
         }
 
         &.light {
@@ -131,7 +115,8 @@ body {
 
     .search-container {
       background-color: #ecf0f3;
-      padding: 2rem;
+      background: #f7f7f7;
+      padding: 10px;
       border-radius: 24px;
       max-width: 800px;
       margin: 40px auto;
@@ -140,14 +125,15 @@ body {
         -10px -10px 10px #f9f9f9;
 
       form {
-        height: 60px;
         gap: 20px;
         margin-bottom: 40px;
+        flex-wrap: wrap;
 
         input {
           border: 4px solid colors(sec);
           border-radius: 12px;
           width: 100%;
+          height: 60px;
           padding: 0 10px;
 
           &:hover,
@@ -158,10 +144,10 @@ body {
 
         button {
           border-radius: 12px;
-          height: 100%;
+          height: 60px;
+          width: 100%;
           background: colors(main);
           color: #fff;
-          width: 200px;
           font-weight: bold;
           font-size: 20px;
           border: 3px solid #fff;
@@ -173,18 +159,6 @@ body {
       }
     }
 
-    form {
-      body {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-
-        #data {
-          width: 100% !important;
-        }
-      }
-    }
-
     section.guide {
       flex-wrap: wrap;
       justify-content: space-around;
@@ -192,6 +166,7 @@ body {
         max-width: 300px;
         text-align: center;
         position: relative;
+        margin-bottom: 40px;
         .title {
           gap: 10px;
           font-size: 24px;
@@ -214,6 +189,7 @@ body {
           position: absolute;
           top: 20%;
           right: -20%;
+          transform: rotate(90deg);
         }
       }
     }
@@ -223,6 +199,7 @@ body {
     width: 100%;
     height: 100px;
     background: #f7f7f7;
+    text-align: center;
     .content-container {
       width: 100%;
       height: 100%;
@@ -230,7 +207,8 @@ body {
     ul {
       list-style: none;
       height: fit-content;
-      gap: 40px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

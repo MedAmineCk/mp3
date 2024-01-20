@@ -1,3 +1,18 @@
+/*--------------- Preloader -------------------*/
+document.addEventListener("DOMContentLoaded", function () {
+  const preloader = document.querySelector(".preloader-container");
+  const body = document.body;
+
+  // Add the 'loaded' class to the body after the page has fully loaded
+  body.classList.add("loaded");
+
+  // Remove the preloader once the transition is complete
+  preloader.addEventListener("transitionend", function () {
+    preloader.style.display = "none";
+  });
+});
+
+/*--------------- FAQs sections -------------------*/
 document.querySelectorAll(".faq").forEach(function (faq) {
   faq.addEventListener("click", function () {
     var collapsible = this.querySelector(".collapsible");
@@ -15,6 +30,7 @@ document.querySelectorAll(".faq").forEach(function (faq) {
   });
 });
 
+/*--------------- generate IFRAME -------------------*/
 function generateIframe(event) {
   event.preventDefault();
   // Get the YouTube URL from the input
@@ -41,6 +57,7 @@ function generateIframe(event) {
   document.getElementById("iframeContainer").appendChild(iframe);
 }
 
+/*--------------- DARK MODE -------------------*/
 const logo = document.getElementById("logo");
 const toggleModButton = document.getElementById("toggleModButton");
 
@@ -54,8 +71,8 @@ function toggleDarkMode(_this) {
   // Toggle the logo source between light and dark modes
   const isDarkMode = document.body.classList.contains("dark");
   logo.src = isDarkMode
-    ? "./img/ytmp3juice-logo-dark.svg"
-    : "./img/ytmp3juice-logo.svg";
+    ? "/img/ytmp3juice-logo-dark.svg"
+    : "/img/ytmp3juice-logo.svg";
 
   localStorage.setItem("isDark", isDarkMode ? "enabled" : "");
 }
@@ -64,5 +81,5 @@ let isDarkMode = localStorage.getItem("isDark");
 if (isDarkMode === "enabled") {
   document.body.classList.add("dark");
   toggleModButton.classList.add("dark");
-  logo.src = "./img/ytmp3juice-logo-dark.svg";
+  logo.src = "/img/ytmp3juice-logo-dark.svg";
 }
