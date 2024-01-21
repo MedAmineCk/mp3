@@ -14,6 +14,7 @@ body.dark {
 
         input {
             background-color: #121212;
+            color: #fff;
         }
     }
 
@@ -35,6 +36,7 @@ body.dark {
         input,
         textarea {
             background-color: colors(dark_sec) !important;
+            color: #fff !important;
         }
     }
 }

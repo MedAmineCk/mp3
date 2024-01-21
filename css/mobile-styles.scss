@@ -193,6 +193,24 @@ body {
         }
       }
     }
+
+    .simple-page-container {
+      .sub-title {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      section {
+        margin: 40px 0;
+        h2 {
+          margin-bottom: 20px;
+        }
+        p,
+        ul,
+        address {
+          padding-left: 40px;
+        }
+      }
+    }
   }
 
   footer {
@@ -209,6 +227,7 @@ body {
       height: fit-content;
       display: flex;
       justify-content: space-between;
+      gap: 20px;
     }
   }
 }

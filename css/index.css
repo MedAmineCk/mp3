@@ -167,7 +167,7 @@ body::-webkit-scrollbar-thumb,
   font-family: "Helvetica", "Arial", sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+       appearance: none;
   background-color: #ff0081;
   color: #fff;
   border-radius: 4px;
@@ -235,13 +235,7 @@ section.contact-container .container .contactInfo ul.info li span:nth-child(1) {
   width: 30px;
   min-width: 30px;
 }
-section.contact-container
-  .container
-  .contactInfo
-  ul.info
-  li
-  span:nth-child(1)
-  img {
+section.contact-container .container .contactInfo ul.info li span:nth-child(1) img {
   max-width: 100%;
   filter: invert(1);
 }
@@ -320,34 +314,10 @@ section.contact-container .container .contactForm .formBox .inputBox span {
   font-weight: 300;
   transition: 0.3s;
 }
-section.contact-container
-  .container
-  .contactForm
-  .formBox
-  .inputBox
-  input:focus
-  ~ span,
-section.contact-container
-  .container
-  .contactForm
-  .formBox
-  .inputBox
-  input:valid
-  ~ span,
-section.contact-container
-  .container
-  .contactForm
-  .formBox
-  .inputBox
-  textarea:focus
-  ~ span,
-section.contact-container
-  .container
-  .contactForm
-  .formBox
-  .inputBox
-  textarea:valid
-  ~ span {
+section.contact-container .container .contactForm .formBox .inputBox input:focus ~ span,
+section.contact-container .container .contactForm .formBox .inputBox input:valid ~ span,
+section.contact-container .container .contactForm .formBox .inputBox textarea:focus ~ span,
+section.contact-container .container .contactForm .formBox .inputBox textarea:valid ~ span {
   transform: translateY(-20px);
   font-size: 12px;
   font-weight: 400;
@@ -355,12 +325,7 @@ section.contact-container
   color: #e91e63;
   font-weight: 500;
 }
-section.contact-container
-  .container
-  .contactForm
-  .formBox
-  .inputBox
-  input[type="submit"] {
+section.contact-container .container .contactForm .formBox .inputBox input[type=submit] {
   position: relative;
   cursor: pointer;
   background: #e91e63;
@@ -369,12 +334,7 @@ section.contact-container
   max-width: 150px;
   padding: 12px;
 }
-section.contact-container
-  .container
-  .contactForm
-  .formBox
-  .inputBox
-  input[type="submit"]:hover {
+section.contact-container .container .contactForm .formBox .inputBox input[type=submit]:hover {
   background: #0d948b;
 }
 
@@ -452,6 +412,7 @@ body.dark .search-container {
 }
 body.dark .search-container input {
   background-color: #121212;
+  color: #fff;
 }
 body.dark .section-faq .collapsible {
   background-color: #121212;
@@ -468,6 +429,7 @@ body.dark .contactForm h2 {
 body.dark .contactForm input,
 body.dark .contactForm textarea {
   background-color: #272727 !important;
+  color: #fff !important;
 }
 
 body {
@@ -543,8 +505,7 @@ body {
 }
 
 @keyframes music-waves {
-  0%,
-  100% {
+  0%, 100% {
     height: 20px;
   }
   50% {
@@ -552,8 +513,7 @@ body {
   }
 }
 @keyframes text-pulse {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
@@ -580,13 +540,11 @@ body {
     gap: 40px;
     list-style: none;
   }
-  body header nav ul a.active,
-  body header nav ul a:hover {
+  body header nav ul a.active, body header nav ul a:hover {
     color: #e91e63;
     font-weight: bold;
   }
-  body header nav ul a.active:after,
-  body header nav ul a:hover:after {
+  body header nav ul a.active:after, body header nav ul a:hover:after {
     content: "";
     display: block;
     width: 100%;
@@ -605,8 +563,8 @@ body {
     overflow: hidden;
     cursor: pointer;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
   body header .mode input {
     visibility: hidden;
@@ -657,8 +615,7 @@ body {
     width: 100%;
     padding: 0 10px;
   }
-  body main .search-container form input:hover,
-  body main .search-container form input:focus {
+  body main .search-container form input:hover, body main .search-container form input:focus {
     border: 4px solid #e91e63 !important;
   }
   body main .search-container form button {
@@ -783,13 +740,11 @@ body {
     list-style: none;
     justify-content: space-between;
   }
-  body header nav ul a.active,
-  body header nav ul a:hover {
+  body header nav ul a.active, body header nav ul a:hover {
     color: #e91e63;
     font-weight: bold;
   }
-  body header nav ul a.active:after,
-  body header nav ul a:hover:after {
+  body header nav ul a.active:after, body header nav ul a:hover:after {
     content: "";
     display: block;
     width: 100%;
@@ -809,8 +764,8 @@ body {
     overflow: hidden;
     cursor: pointer;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
   body header .mode .label {
     display: none;
@@ -866,8 +821,7 @@ body {
     height: 60px;
     padding: 0 10px;
   }
-  body main .search-container form input:hover,
-  body main .search-container form input:focus {
+  body main .search-container form input:hover, body main .search-container form input:focus {
     border: 4px solid #e91e63 !important;
   }
   body main .search-container form button {
@@ -917,6 +871,21 @@ body {
     right: -20%;
     transform: rotate(90deg);
   }
+  body main .simple-page-container .sub-title {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  body main .simple-page-container section {
+    margin: 40px 0;
+  }
+  body main .simple-page-container section h2 {
+    margin-bottom: 20px;
+  }
+  body main .simple-page-container section p,
+  body main .simple-page-container section ul,
+  body main .simple-page-container section address {
+    padding-left: 40px;
+  }
   body footer {
     width: 100%;
     height: 100px;
@@ -933,5 +902,6 @@ body {
     height: fit-content;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
   }
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

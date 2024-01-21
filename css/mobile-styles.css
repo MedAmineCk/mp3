@@ -166,6 +166,21 @@ body main section.guide .step-card .next-arrow {
   right: -20%;
   transform: rotate(90deg);
 }
+body main .simple-page-container .sub-title {
+  max-width: 600px;
+  margin: 0 auto;
+}
+body main .simple-page-container section {
+  margin: 40px 0;
+}
+body main .simple-page-container section h2 {
+  margin-bottom: 20px;
+}
+body main .simple-page-container section p,
+body main .simple-page-container section ul,
+body main .simple-page-container section address {
+  padding-left: 40px;
+}
 body footer {
   width: 100%;
   height: 100px;
@@ -182,4 +197,5 @@ body footer ul {
   height: fit-content;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }/*# sourceMappingURL=mobile-styles.css.map */
