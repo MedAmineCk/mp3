@@ -34,7 +34,7 @@ document.querySelectorAll(".faq").forEach(function (faq) {
 function generateIframe(event) {
   event.preventDefault();
   // Get the YouTube URL from the input
-  var youtubeUrl = document.getElementById("youtubeUrlInput").value;
+  var YouTubeUrl = document.getElementById("YouTubeUrlInput").value;
 
   // Create an iframe element
   var iframe = document.createElement("iframe");
@@ -45,8 +45,8 @@ function generateIframe(event) {
 
   // Construct the URL for the iframe
   var apiUrl =
-    "https://apiyoutube.cc/?url=" +
-    encodeURIComponent(youtubeUrl) +
+    "https://apiYouTube.cc/?url=" +
+    encodeURIComponent(YouTubeUrl) +
     "&color=e91e63";
   iframe.src = apiUrl;
 

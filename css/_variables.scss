@@ -5,22 +5,7 @@ $colors: (
   dark_sec: #272727,
   dark_text: #f1f1f1
 );
-$whites: (
-  0.8: rgba(255, 255, 255, 0.8),
-  0.6: rgba(255, 255, 255, 0.6),
-  0.4: rgba(255, 255, 255, 0.4),
-  0.2: rgba(255, 255, 255, 0.2),
-  0.02: rgba(255, 255, 255, 0.02)
-);
-$icons: (
-  tailwind: #38b2ac,
-  react: #61dafb,
-  sass: #cb6699,
-  php: #6181b6,
-  mysql: #00618a,
-  js: #f0db4f,
-  figma: #a159fe
-);
+
 $padding: 10px;
 $border: 1px solid #607d8b;
 $border-radius: 4px;
@@ -28,20 +13,9 @@ $gradient: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 
 $shadow:
   -4px -4px 12px rgba(217, 217, 217, 0.05),
   4px 4px 12px rgba(0, 0, 0, 0.15);
-$Roboto: "Roboto", sans-serif;
-$Ubuntu: "Ubuntu", sans-serif;
-$Varela: "Varela Round", sans-serif;
 
 @function colors($color-name) {
   @return map-get($map: $colors, $key: $color-name);
-}
-
-@function whites($color-name) {
-  @return map-get($map: $whites, $key: $color-name);
-}
-
-@function icons($color-name) {
-  @return map-get($map: $icons, $key: $color-name);
 }
 
 $tablet: 1134px;
